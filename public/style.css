@@ -1,0 +1,78 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 8px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-item input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.task-item label {
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.task-item.completed label {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.praise-popup {
+  position: relative;
+}
+
+.praise-popup .popup-message {
+  visibility: hidden;
+  width: 120px;
+  background-color: #5cb85c;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position the tooltip above the text */
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.praise-popup .popup-message.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Arrow for the popup */
+.praise-popup .popup-message::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #5cb85c transparent transparent transparent;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
